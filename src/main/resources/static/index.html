@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Todo Application</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Todo Application</h1>
+
+        <!-- Create Todo -->
+        <div class="todo-form">
+
+            <input type="text" id="taskInput" placeholder="Enter your task...">
+
+            <button onclick="createTodo()">
+                Add Task
+            </button>
+
+        </div>
+
+
+        <!-- Todo List -->
+        <div class="todo-section">
+
+            <h2>My Tasks</h2>
+
+            <div id="todoList"></div>
+
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
