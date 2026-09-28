@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="page-shell">
+        <section class="hero-panel">
+            <div class="brand-row">
+                <div class="brand-icon">
+                    <span class="checkmark">✓</span>
+                </div>
+                <h1>Todo App</h1>
+            </div>
+
+            <p class="tagline">Stay organized. Get things done.</p>
+
+            <div class="illustration-wrap" aria-hidden="true">
+                <div class="blob blob-one"></div>
+                <div class="blob blob-two"></div>
+
+                <div class="board">
+                    <div class="clip"></div>
+                    <div class="checklist">
+                        <span class="check done"></span>
+                        <span class="line short"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+
+                        <span class="check done"></span>
+                        <span class="line short"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+
+                        <span class="check pending"></span>
+                        <span class="line short"></span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+
+                <div class="plant">
+                    <div class="pot"></div>
+                    <div class="leaf leaf-one"></div>
+                    <div class="leaf leaf-two"></div>
+                </div>
+
+                <div class="mug"></div>
+            </div>
+
+            <p class="script-text">Small steps. Big goals.</p>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-card">
+                <div class="icon-ring">
+                    <span class="checkmark">✓</span>
+                </div>
+
+                <h2 id="authTitle">Welcome Back</h2>
+                <p id="authSubtitle" class="subheading">Login to your Todo account</p>
+
+                <form class="auth-form" onsubmit="event.preventDefault(); loginUser();">
+                    <label for="loginUsername">Username</label>
+                    <div class="input-wrap">
+                        <span class="input-icon email-icon">✉</span>
+                        <input type="text" id="loginUsername" placeholder="Enter your username" autocomplete="username" required>
+                    </div>
+
+                    <label for="loginPassword">Password</label>
+                    <div class="input-wrap">
+                        <span class="input-icon lock-icon">🔒</span>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" autocomplete="current-password" required>
+                        <span class="toggle-eye">◉</span>
+                    </div>
+
+                    <div class="remember-row">
+                        <label class="checkbox-row">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">Login</button>
+                </form>
+
+                <form class="auth-form" id="registerForm" onsubmit="event.preventDefault(); registerUser();" hidden>
+                    <label for="registerUsername">Username</label>
+                    <div class="input-wrap">
+                        <span class="input-icon email-icon">✉</span>
+                        <input type="text" id="registerUsername" placeholder="Choose a username" autocomplete="username" required>
+                    </div>
+
+                    <label for="registerPassword">Password</label>
+                    <div class="input-wrap">
+                        <span class="input-icon lock-icon">🔒</span>
+                        <input type="password" id="registerPassword" placeholder="Create a password" autocomplete="new-password" required>
+                    </div>
+
+                    <button type="submit" class="login-btn">Create Account</button>
+                </form>
+
+                <div class="signup-row">
+                    <span id="authPrompt">Don't have an account?</span>
+                    <button id="authSwitch" type="button" onclick="toggleAuthMode()">Create Account</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

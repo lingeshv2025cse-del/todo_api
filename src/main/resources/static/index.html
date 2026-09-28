@@ -14,12 +14,53 @@
 
     <div class="container">
 
-        <h1>Todo Application</h1>
+        <div class="topbar">
+            <h1>Todo Application</h1>
+            <button class="logout-btn" onclick="logoutUser()">Logout</button>
+        </div>
+
+        <section class="dashboard-welcome">
+            <div class="dashboard-welcome-copy">
+                <p id="welcomeText"></p>
+                <p class="dashboard-tagline">A little progress, every day.</p>
+            </div>
+            <div class="dashboard-art" aria-hidden="true">
+                <div class="art-board">
+                    <div class="art-clip"></div>
+                    <div class="art-row"><span class="art-check">✓</span><span class="art-line"></span></div>
+                    <div class="art-row"><span class="art-check">✓</span><span class="art-line"></span></div>
+                    <div class="art-row"><span class="art-check art-pending"></span><span class="art-line art-line-short"></span></div>
+                </div>
+                <div class="art-plant">
+                    <span class="art-leaf art-leaf-left"></span>
+                    <span class="art-leaf art-leaf-right"></span>
+                    <span class="art-pot"></span>
+                </div>
+                <div class="art-mug"></div>
+            </div>
+        </section>
+
+        <section class="dashboard-summary" aria-label="User statistics">
+            <div class="summary-stat">
+                <span class="summary-label">Registered users</span>
+                <strong id="registeredUserCount" aria-live="polite">--</strong>
+            </div>
+        </section>
 
         <!-- Create Todo -->
         <div class="todo-form">
 
             <input type="text" id="taskInput" placeholder="Enter your task...">
+            <input type="date" id="dueDateInput">
+            <select id="priorityInput">
+                <option value="LOW">Low</option>
+                <option value="MEDIUM" selected>Medium</option>
+                <option value="HIGH">High</option>
+            </select>
+            <label class="checkbox-label">
+                <input type="checkbox" id="completedInput">
+                Completed
+            </label>
 
             <button onclick="createTodo()">
                 Add Task
@@ -27,6 +68,20 @@
 
         </div>
 
+        <div class="filter-actions">
+            <button id="taskFilterBtn" class="filter-btn" onclick="toggleTaskFilter()">
+                Show Uncompleted
+            </button>
+            <input type="search" id="taskSearchInput" placeholder="Search tasks..." aria-label="Search tasks">
+            <input type="date" id="taskDateFilter" aria-label="Filter by due date">
+            <select id="taskPriorityFilter" aria-label="Filter by priority">
+                <option value="">All priorities</option>
+                <option value="LOW">Low</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HIGH">High</option>
+            </select>
+            <button id="clearTaskFiltersBtn" class="clear-filter-btn" type="button">Clear filters</button>
+        </div>
 
         <!-- Todo List -->
         <div class="todo-section">
