@@ -53,7 +53,11 @@ public class todocontroller
 
     @PutMapping("/updateTodo/{id}")
     public todomodel updatetodo(@PathVariable Long id,@RequestBody todomodel task) {
-        return todoSer.updateTodo(id, task);
+        todomodel updatedTask = todoSer.updateTodo(id, task);
+        if (updatedTask == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Task not found");
+        }
+        return updatedTask;
     }
     
     @DeleteMapping ("/deleteTodo/{id}")
